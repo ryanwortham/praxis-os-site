@@ -1038,38 +1038,61 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     });
 });
 
-// Contact form
-function submitContact() {
+// Contact form — sends directly via Formspree (no email client needed)
+async function submitContact() {
     const name = document.getElementById('cfName').value.trim();
     const email = document.getElementById('cfEmail').value.trim();
     const phone = document.getElementById('cfPhone').value.trim();
     const business = document.getElementById('cfBusiness').value.trim();
     const type = document.getElementById('cfType').value;
     const message = document.getElementById('cfMessage').value.trim();
+    const btn = document.querySelector('.btn-submit');
 
     if (!name || !email) {
         alert('Please enter your name and email.');
         return;
     }
 
-    // Build mailto with all fields
-    const subject = encodeURIComponent('PRAXIS Inquiry — ' + (business || name));
-    const body = encodeURIComponent(
-        'New inquiry from get-praxis.com\n\n' +
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n' +
-        'Phone: ' + (phone || 'Not provided') + '\n' +
-        'Business: ' + (business || 'Not provided') + '\n' +
-        'Type: ' + (type || 'Not specified') + '\n\n' +
-        'Message:\n' + (message || 'No message provided')
-    );
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-    // Send via mailto
-    window.location.href = 'mailto:joelleerahn@gmail.com?subject=' + subject + '&body=' + body;
+    try {
+        const res = await fetch('https://formspree.io/f/joelleerahn@gmail.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                _subject: 'PRAXIS Inquiry — ' + (business || name),
+                name: name,
+                email: email,
+                phone: phone || 'Not provided',
+                business: business || 'Not provided',
+                type: type || 'Not specified',
+                message: message || 'No message provided'
+            })
+        });
 
-    // Show success
-    document.getElementById('formFields').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+        if (res.ok) {
+            document.getElementById('formFields').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+        } else {
+            throw new Error('Submit failed');
+        }
+    } catch(e) {
+        // Fallback to mailto if Formspree fails
+        const subject = encodeURIComponent('PRAXIS Inquiry — ' + (business || name));
+        const body = encodeURIComponent(
+            'New inquiry from get-praxis.com\n\n' +
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Phone: ' + (phone || 'Not provided') + '\n' +
+            'Business: ' + (business || 'Not provided') + '\n' +
+            'Type: ' + (type || 'Not specified') + '\n\n' +
+            'Message:\n' + (message || 'No message provided')
+        );
+        window.location.href = 'mailto:joelleerahn@gmail.com?subject=' + subject + '&body=' + body;
+        document.getElementById('formFields').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+    }
 }
 </script>
 </body>
