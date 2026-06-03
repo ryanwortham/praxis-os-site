@@ -1,1 +1,49 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Work With Us — Praxis Base Camp Guide</title><meta name="description" content="Praxis is a diagnosis-first operating partner for owners who need clarity before tools, tactics, or more noise."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css"></head><body><div class="site"><nav class="nav"><div class="nav-inner"><a class="brand" href="/">PRAXIS <span>BASE CAMP</span></a><button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">Menu</button><div class="links"><a href="/about.html">About</a><a href="/how-we-work.html">How We Work</a><a class="nav-cta" href="/work-with-us.html#chat">Start the diagnostic</a></div></div></nav><main><section class="page-hero wrap"><div class="breadcrumb">Work With Us</div><h1>The first step is a diagnostic conversation.</h1><p class="lead">Use the Base Camp Guide below. It will help identify terrain, urgency, readiness, and fit. If there is a real next step, it will route you appropriately.</p></section><section class="section" id="chat"><div class="wrap"><div class="rep-panel"><div class="kicker">Praxis Base Camp Guide</div><h2>Start here.</h2><p style="margin-bottom:20px">You can begin without having the perfect explanation. The guide is designed to help separate symptoms from system constraints.</p><iframe class="rep-frame" src="https://representatives.bitta.ai/projects/198c6e21-0952-478e-b2fa-e34f8fc8d086" title="Praxis Base Camp Guide" loading="lazy" allow="camera; microphone; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="fallback">If the Base Camp Guide is unavailable, email <a href="mailto:joel@get-praxis.com">joel@get-praxis.com</a> directly.</p></div></div></section><section class="section"><div class="wrap"><div class="grid three"><div class="card"><h3>What it asks</h3><p>What kind of system you are in, what feels stuck, what has already been tried, and why now.</p></div><div class="card"><h3>What it protects</h3><p>It keeps raw calendar links off the public site and avoids sending low-fit conversations straight to a human call.</p></div><div class="card"><h3>What happens next</h3><p>If the conversation earns a next step, the guide can collect contact information and route you to the right lane.</p></div></div></div></section></main><footer class="footer"><div class="footer-inner"><div>© 2026 Praxis. Diagnosis before prescription.</div><div><a href="/privacy.html">Privacy</a><a href="mailto:joel@get-praxis.com">joel@get-praxis.com</a></div></div></footer></div></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Work With Us — Praxis Base Camp Guide</title><meta name="description" content="Praxis is a diagnosis-first operating partner for owners who need clarity before tools, tactics, or more noise."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/site.css"></head><body><div class="site"><nav class="nav"><div class="nav-inner"><a class="brand" href="/">PRAXIS <span>BASE CAMP</span></a><button class="menu" aria-label="Menu" onclick="document.querySelector('.links').classList.toggle('open')">Menu</button><div class="links"><a href="/about.html">About</a><a href="/how-we-work.html">How We Work</a><a class="nav-cta" href="/work-with-us.html#chat">Start the diagnostic</a></div></div></nav><main><section class="page-hero wrap"><div class="breadcrumb">Work With Us</div><h1>The first step is a diagnostic conversation.</h1><p class="lead">Use the Base Camp Guide below. It will help identify terrain, urgency, readiness, and fit. If there is a real next step, it will route you appropriately.</p></section><section class="section" id="chat"><div class="wrap"><div class="rep-panel"><div class="kicker">Praxis Base Camp Guide</div><h2>Start here.</h2><p style="margin-bottom:20px">You can begin without having the perfect explanation. The guide is designed to help separate symptoms from system constraints.</p><iframe class="rep-frame" src="https://representatives.bitta.ai/projects/198c6e21-0952-478e-b2fa-e34f8fc8d086" title="Praxis Base Camp Guide" loading="lazy" allow="camera; microphone; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe><p class="fallback">If the Base Camp Guide is unavailable, email <a href="mailto:joel@get-praxis.com">joel@get-praxis.com</a> directly.</p></div></div></section><section class="section"><div class="wrap"><div class="grid three"><div class="card"><h3>What it asks</h3><p>What kind of system you are in, what feels stuck, what has already been tried, and why now.</p></div><div class="card"><h3>What it protects</h3><p>It keeps raw calendar links off the public site and avoids sending low-fit conversations straight to a human call.</p></div><div class="card"><h3>What happens next</h3><p>If the conversation earns a next step, the guide can collect contact information and route you to the right lane.</p></div></div></div></section></main><footer class="footer"><div class="footer-inner"><div>© 2026 Praxis. Diagnosis before prescription.</div><div><a href="/privacy.html">Privacy</a><a href="mailto:joel@get-praxis.com">joel@get-praxis.com</a></div></div></footer></div><script>
+(function protectChatEmbedScroll(){
+  const frame = document.querySelector('.rep-frame');
+  if (!frame) return;
+
+  const getBottomY = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight - 24);
+  const isFramePartlyVisible = () => {
+    const rect = frame.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  };
+
+  let lastStableY = window.scrollY;
+  let guardUntil = 0;
+  let restoring = false;
+
+  const markChatActivity = () => {
+    if (window.scrollY < getBottomY()) lastStableY = window.scrollY;
+    guardUntil = Date.now() + 3500;
+  };
+
+  frame.addEventListener('load', markChatActivity);
+  frame.addEventListener('focus', markChatActivity);
+  frame.addEventListener('pointerdown', markChatActivity);
+  frame.addEventListener('touchstart', markChatActivity, { passive: true });
+
+  window.addEventListener('message', (event) => {
+    try {
+      if (new URL(frame.src).origin === event.origin) markChatActivity();
+    } catch (_) {}
+  });
+
+  window.addEventListener('scroll', () => {
+    if (restoring) return;
+
+    const y = window.scrollY;
+    const bottomY = getBottomY();
+    const looksLikeEmbedSnap = Date.now() < guardUntil && isFramePartlyVisible() && y >= bottomY && Math.abs(y - lastStableY) > 140;
+
+    if (looksLikeEmbedSnap) {
+      restoring = true;
+      window.scrollTo({ top: lastStableY, behavior: 'auto' });
+      requestAnimationFrame(() => { restoring = false; });
+      return;
+    }
+
+    if (y < bottomY) lastStableY = y;
+  }, { passive: true });
+})();
+</script></body></html>
