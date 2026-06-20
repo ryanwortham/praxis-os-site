@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://get-praxis.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://get-praxis.com/about.html</loc><priority>0.7</priority></url>
-  <url><loc>https://get-praxis.com/how-we-work.html</loc><priority>0.9</priority></url>
-  <url><loc>https://get-praxis.com/work-with-us.html</loc><priority>0.9</priority></url>
+  <url><loc>https://get-praxis.com/problems.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/problems/owner-bottleneck.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/problems/follow-up-gaps.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/problems/messy-intake.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/problems/manual-workflows.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/problems/growth-friction.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/problems/tool-confusion.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/tool-fit.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/about.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/how-we-work.html</loc><priority>0.8</priority></url>
+  <url><loc>https://get-praxis.com/work-with-us.html</loc><priority>0.8</priority></url>
   <url><loc>https://get-praxis.com/guides/business.html</loc><priority>0.8</priority></url>
-  <url><loc>https://get-praxis.com/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://get-praxis.com/privacy.html</loc><priority>0.8</priority></url>
 </urlset>

@@ -15,3 +15,5 @@
 
 /* Chat iframe scroll containment: keep third-party chatbot focus/auto-scroll inside the embed. */
 .rep-panel{overflow-anchor:none;contain:layout paint}.rep-frame{overscroll-behavior:contain}
+
+.problem-grid a.card{text-decoration:none;color:inherit;display:block}.problem-card{transition:transform .18s ease,border-color .18s ease,background .18s ease}.problem-card:hover{transform:translateY(-3px);border-color:rgba(231,185,95,.55);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025))}.problem-card span{display:inline-block;margin-top:14px;color:var(--accent2);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.breadcrumb a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(231,185,95,.45)}
